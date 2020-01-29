@@ -39,6 +39,8 @@ App = {
     const todoList = await $.getJSON("TodoList.json");
     App.contracts.TodoList = TruffleContract(todoList);
     App.contracts.TodoList.setProvider(App.web3Provider);
+
+    App.todoList = await App.contracts.TodoList.deployed();
   }
 };
 $(() => {
