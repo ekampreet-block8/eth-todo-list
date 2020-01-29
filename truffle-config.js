@@ -3,7 +3,7 @@ module.exports = {
     development: {
       host: "127.0.0.1",
       port: 7545,
-      networkid: "*" //watch any network id
+      networkid: "5777"
     }
   },
   solc: {
