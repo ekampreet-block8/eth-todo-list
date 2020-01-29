@@ -59,22 +59,10 @@ App = {
     //Update loading state
     App.setLoading(false);
   },
-  setLoading: boolean => {
-    App.loading = boolean;
-    const loader = $("#loader");
-    const content = $("#content");
-    if (boolean) {
-      loader.show();
-      content.hide();
-    } else {
-      loader.hide();
-      content.show();
-    }
-  },
   renderTasks: async () => {
     //Load the total count from the blockchain
     const taskCount = await App.todoList.taskCount();
-    const $taskTemplate = $("taskTemplate");
+    const $taskTemplate = $(".taskTemplate");
     //Render out each task with a new task template
     for (var i = 1; i <= taskCount; i++) {
       const task = await App.todoList.tasks(i);
@@ -95,9 +83,21 @@ App = {
       } else {
         $("#taskList").append($newTaskTemplate);
       }
+      //Show the task
+      $newTaskTemplate.show();
     }
-    //Show the task
-    $newTaskTemplate.show();
+  },
+  setLoading: boolean => {
+    App.loading = boolean;
+    const loader = $("#loader");
+    const content = $("#content");
+    if (boolean) {
+      loader.show();
+      content.hide();
+    } else {
+      loader.hide();
+      content.show();
+    }
   }
 };
 $(() => {
