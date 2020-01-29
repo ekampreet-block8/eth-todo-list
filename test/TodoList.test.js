@@ -1,7 +1,7 @@
 const TodoList = artifacts.require("./TodoList.sol");
 
 contract("TodoList", accounts => {
-  Before(async () => {
+  before(async () => {
     this.todoList = await TodoList.deployed();
   });
 
