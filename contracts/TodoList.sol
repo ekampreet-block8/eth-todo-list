@@ -29,6 +29,7 @@ contract TodoList {
         Task memory _task = tasks[_id];
         _task.completed = !_task.completed;
         task[_id] = _task;
+        emit TaskCompleted(id, _taskcompleted);
     }
 
 }
