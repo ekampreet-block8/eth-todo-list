@@ -68,6 +68,11 @@ App = {
       loader.hide();
       content.show();
     }
+  },
+  renderTasks: async () => {
+    //Load the total count from the blockchain
+    //Render out each task with a new task template
+    //Show the task
   }
 };
 $(() => {
