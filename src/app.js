@@ -1,4 +1,5 @@
 App = {
+  Loading: false,
   contracts: {},
   load: async () => {
     await App.loadWeb3();
@@ -45,7 +46,16 @@ App = {
   },
 
   render: async () => {
+    //prevent double render
+    if (App.Loading) {
+      return;
+    }
+    //update app loading state
+    App.setLoading(true);
+    //Render Account
     $("#account").html(App.account);
+    //Update loading state
+    App.setLoading(false);
   }
 };
 $(() => {
