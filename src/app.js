@@ -76,7 +76,7 @@ App = {
         .find("input")
         .prop("name", taskId)
         .prop("checked", taskCompleted);
-      // .on("click", App.toggleCompleted);
+        .on("click", App.toggleCompleted);
       //put the task in correct list
       if (taskCompleted) {
         $("#completedTaskList").append($newTaskTemplate);
