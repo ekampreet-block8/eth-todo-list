@@ -1,0 +1,7 @@
+todoList = await TodoList.deployed()  //always connect async ly
+todoList //shows contract
+todoList.address //address where contract located on blockchain
+todoList.taskCount()
+
+taskCount = await todoList.taskCount()
+taskCount.toNumber()
