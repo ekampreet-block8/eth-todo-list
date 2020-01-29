@@ -4,6 +4,7 @@ App = {
     await App.loadWeb3();
     await App.loadAccount();
     await App.loadContract();
+    await App.render();
   },
   loadWeb3: async () => {
     if (typeof web3 !== "undefined") {
@@ -41,6 +42,10 @@ App = {
     App.contracts.TodoList.setProvider(App.web3Provider);
 
     App.todoList = await App.contracts.TodoList.deployed();
+  },
+
+  render: async () => {
+    $("#account").html(App.account);
   }
 };
 $(() => {
