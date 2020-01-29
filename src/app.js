@@ -2,6 +2,7 @@ App = {
   load: async () => {
     await App.loadWeb3();
     await App.loadAccount();
+    await App.loadContract();
   },
   loadWeb3: async () => {
     if (typeof web3 !== "undefined") {
@@ -28,9 +29,14 @@ App = {
       );
     }
   },
+
   loadAccount: async () => {
     App.account = web3.eth.accounts[0];
-    console.log(App.account);
+  },
+
+  loadContract: async () => {
+    const todoList = await $.getJSON("TodoList.json");
+    console.log(todoList);
   }
 };
 $(() => {
