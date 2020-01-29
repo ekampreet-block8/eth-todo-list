@@ -13,6 +13,8 @@ contract TodoList {
 
     event TaskCreated(uint256 id, string content, bool completed);
 
+    event TaskCompleted(uint256 id, bool completed);
+
     constructor() public {
         createTask("Hello World");
     }
