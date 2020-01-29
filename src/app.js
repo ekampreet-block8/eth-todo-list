@@ -1,6 +1,7 @@
 App = {
   load: async () => {
     await App.loadWeb3();
+    await App.loadAccount();
   },
   loadWeb3: async () => {
     if (typeof web3 !== "undefined") {
@@ -26,6 +27,9 @@ App = {
         "Non-Ethereum browser detected.You should consider trying MetaMask!"
       );
     }
+  },
+  loadAccount:async(){
+      App.account = web3.eth.accounts[0]
   }
 };
 $(() => {
