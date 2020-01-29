@@ -5,3 +5,13 @@ todoList.taskCount()
 
 taskCount = await todoList.taskCount()
 taskCount.toNumber()
+
+
+todoList = await TodoList.deployed()
+todoList.address
+task = await todoList.tasks(1)
+task
+task.id
+task.id.toNumber()
+task.content
+task.completed
